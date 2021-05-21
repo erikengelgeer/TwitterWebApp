@@ -1,0 +1,80 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+  color: #0366d6;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+body {
+  font-family: 'Titillium Web';
+}
+
+.first {
+    padding-top: 1%;
+}
+
+.second {
+    padding-top: 1%;
+}
+
+.third {
+    padding-top: 1%;
+}
+
+.side-nav {
+    font-size: 18px;
+    position: fixed;
+}
+
+.side-nav a:hover {
+    color: #1da1f2 !important; 
+    background-color: #e8f5fe !important;
+}
+
+.home-icn {
+    color: #1da1f2;
+    font-size: 25px;
+}
+
+.rounded-circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.login-form {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.glyphicon {
+    font-size: 16px !important;
+}
+
+.tweet-area {
+    resize: none !important;
+}
+
+.h-line {
+    margin-top: 10rem;
+}

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "Inloggen bij Twitter";
+    var cssClass = ViewBag.cssClass;
+    var msg = ViewBag.msg;
+    var uname = ViewBag.uname;
+}
+
+@model User
+
+<div class="container">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6 text-center">
+        <h1 class="text-center">Log in bij Twitter</h1>
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="rounded-circle home-icn font-weight-bold border-0 text-center ">
+            <i class="bi bi-twitter home-icn"></i>
+        </a>
+        <div class="login-form">
+            <form class="" method="post" asp-action="Check">
+                <div class="form-group w-100">
+                    <label asp-for="Username">Username</label>
+                    <input asp-for="Username" class="form-control" placeholder="Username" required value="@uname" autocomplete="off">
+                    <div class="alert alert-danger @cssClass" id="err-message" role="alert">
+                        @msg
+                    </div>
+                </div>
+                <div class="form-group w-100">
+                    <label asp-for="Password">Password</label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="form-group w-100">
+                    <input type="submit" value="Login" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+        <p><a asp-area="" asp-action="Register">Registreren op Twitter</a></p>
+    </div>
+</div>

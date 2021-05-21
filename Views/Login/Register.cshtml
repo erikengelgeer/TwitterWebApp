@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Registeren bij Twitter";
+    var msg = ViewBag.msg;
+    var err = ViewBag.err;
+    var passErr = ViewBag.passErr;
+    var passMsg = ViewBag.passMsg;
+}
+
+@model User
+
+<div class="container">
+    <div class="col-md-3">
+
+    </div>
+    <div class="col-md-6 text-center">
+        <h1 class="text-center">Registreren bij Twitter</h1>
+
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.ValidationSummary()
+    <div>
+        <div>
+            @Html.LabelFor(x => x.Username)
+            @Html.TextBoxFor(x => x.Username)
+            @Html.ValidationMessageFor(x => x.Username)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.Password)
+            @Html.PasswordFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Password)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.DateOfBirth)
+            @Html.EditorFor(x => x.DateOfBirth)
+            @Html.ValidationMessageFor(x => x.DateOfBirth)
+        </div>
+        <span class="text-danger"> @msg </span>
+        <div class="form-group w-100 mt-4">
+            <input type="submit" value="Registreren" class="btn btn-primary" />
+        </div>
+    </div>
+        }
+    </div>
+</div>

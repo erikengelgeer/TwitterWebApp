@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Twitter";
+    var user = ViewBag.user;
+    var atSign = "@";
+    var dob = ViewBag.dob;
+}
+
+<div>
+    <div class="col-md-3 first vh-100 border-right ">
+        <div class="list-group d-flex text-center side-nav border-0">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="rounded-circle home-icn font-weight-bold border-0 text-center ">
+                <i class="bi bi-twitter home-icn"></i>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action rounded-pill home-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-home ml-1 mr-5"></span>
+                Home
+            </a>
+            <a asp-area="" asp-controller="Profile" asp-action="Index" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-user ml-1 mr-5"></span>
+                Profile
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Logout" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-log-out ml-1 mr-5"></span>
+                Logout
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 second vh-100">
+        <h2>Profile</h2>
+        <h3>@atSign@user.Username</h3>
+
+        <h4>First name: @user.FirstName</h4>
+        <h4>Last name: @user.LastName</h4>
+        <h4>Date of Birth: @dob</h4>
+        <a asp-area="" asp-controller="Profile" asp-action="ChangePass" class="list-group-item list-group-item-action rounded-pill home-btn font-weight-bold border-0 text-left w-50">
+            <span class="glyphicon glyphicon-edit ml-1 mr-2"></span>
+            Change Password
+        </a>
+    </div>
+    <div class="col-md-3 third vh-100 border-left">
+        @*Top 5 trending*@
+    </div>
+
+</div>

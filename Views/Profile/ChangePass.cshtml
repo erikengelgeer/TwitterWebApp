@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "Twitter";
+    var user = ViewBag.user;
+    var cssClass = ViewBag.cssClass;
+    var msg = ViewBag.msg;
+}
+
+@model User
+
+<div>
+    <div class="col-md-3 first vh-100 border-right ">
+        <div class="list-group d-flex text-center side-nav border-0">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="rounded-circle home-icn font-weight-bold border-0 text-center ">
+                <i class="bi bi-twitter home-icn"></i>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action rounded-pill home-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-home ml-1 mr-5"></span>
+                Home
+            </a>
+            <a asp-area="" asp-controller="Profile" asp-action="Index" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-user ml-1 mr-5"></span>
+                Profile
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Logout" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-log-out ml-1 mr-5"></span>
+                Logout
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6 second vh-100">
+        <form class="" method="post" asp-action="SubmitChange">
+            <div class="form-group w-100">
+                <label for="oldPass">Old Password</label>
+                <input type="password" name="oldPass" class="form-control" placeholder="Old Password" required>
+                <div class="alert alert-danger @cssClass" id="err-message" role="alert">
+                    @msg
+                </div>
+            </div>
+            <div class="form-group w-100">
+                <label for="Password1">Password</label>
+                <input name="Password1" type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group w-100">
+                <label for="Password2">Verify Password</label>
+                <input name="Password2" type="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group w-100">
+                <input type="submit" value="Login" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <div class="col-md-3 third vh-100 border-left">
+        @*Top 5 trending*@
+    </div>
+
+</div>

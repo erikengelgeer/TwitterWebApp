@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "Twitter";
+
+    var loggedIn = ViewBag.loggedIn;
+    var user = ViewBag.user;
+    var feed = ViewBag.feed;
+    var account = ViewBag.account;
+
+    var atSign = "@";
+
+    if (loggedIn == null)
+    {
+        loggedIn = false;
+    }
+    else
+    {
+        TempData["user"] = user;
+    }
+}
+
+<div>
+    <div class="col-md-3 first vh-100 border-right ">
+        <div class="list-group d-flex text-center side-nav border-0 ">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="rounded-circle home-icn font-weight-bold border-0 text-center ">
+                <i class="bi bi-twitter home-icn"></i>
+            </a>
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="list-group-item list-group-item-action rounded-pill home-btn font-weight-bold border-0 text-left">
+                <span class="glyphicon glyphicon-home ml-1 mr-5"></span>
+                Home
+            </a>
+            @{
+                if (@loggedIn)
+                {
+                    <a asp-area="" asp-controller="Profile" asp-action="Index" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                        <span class="glyphicon glyphicon-user ml-1 mr-5"></span>
+                        Profile
+                    </a>
+                    <a asp-area="" asp-controller="Home" asp-action="Logout" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                        <span class="glyphicon glyphicon-log-out ml-1 mr-5"></span>
+                        Logout
+                    </a>
+                }
+                else
+                {
+                    <a asp-area="" asp-controller="Login" asp-action="Index" class="list-group-item list-group-item-action rounded-pill profile-btn font-weight-bold border-0 text-left">
+                        <span class="glyphicon glyphicon-log-in ml-1 mr-5"></span>
+                        Login
+                    </a>
+                }
+            }
+
+        </div>
+    </div>
+    <div class="col-md-6 second vh-100">
+
+        <h2>User @atSign@account tweets</h2>
+
+        @foreach (var tweet in ViewBag.feed)
+        {
+            <div class="card mt-2">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">@atSign@tweet.Username<small class="text-muted">@tweet.TimeStamp.ToString("dd-MM-yyyy")</small></h6>
+                    <p class="card-text"><strong>@tweet.Content</strong></p>
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+    <div class="col-md-3 third vh-100 border-left">
+        @*Top 5 trending*@
+    </div>
+
+</div>
